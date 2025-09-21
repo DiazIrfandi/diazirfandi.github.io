@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Project | Diaz Irfandi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div id="downloadModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Before Download</h2>
+            <form id="downloadForm" target="hidden_iframe">
+            <div class="mb-3">
+                <label class="block mb-1">Nama</label>
+                <input type="text" name="entry.1338139288" required class="w-full p-2 border rounded dark:bg-gray-700">
+            </div>
+            <div class="mb-3">
+                <label class="block mb-1">Tempat Tinggal</label>
+                <input type="text" name="entry.2121546741" required class="w-full p-2 border rounded dark:bg-gray-700">
+            </div>
+            <div class="mb-3">
+                <label class="block mb-1">Tahu game ini dari mana?</label>
+                <input type="text" name="entry.1715850302" required class="w-full p-2 border rounded dark:bg-gray-700">
+            </div>
+            <div class="mb-3">
+                <label class="block mb-1">Genre game yang disuka</label>
+                <input type="text" name="entry.1078547787" required class="w-full p-2 border rounded dark:bg-gray-700">
+            </div>
+            <button type="submit" 
+                class="w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+                Submit & Download
+            </button>
+            </form>
+            <button onclick="document.getElementById('downloadModal').classList.add('hidden')" 
+            class="mt-3 text-gray-500 hover:text-red-500">Cancel</button>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 pb-4 bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">DiazIrfandi</a>
+        <button id="darkToggle" class="ml-6 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:scale-110 transition">🌙</button>
+    </nav>
+
+    <!-- Content -->
+    <section class="max-w-4xl mx-auto py-20 px-6">
+        <h1 class="text-4xl font-extrabold mb-6 text-indigo-600 dark:text-indigo-400">🎮 Game Project</h1>
+        <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">I created a 3D indie game called <strong>Security Simulator</strong>, made using <strong><a href="https://unity.com/">Unity</a></strong> and several assets found on the internet. Although it is still in the <u>BETA</u> development stage, you can try it out and download it here now.</p>
+        <button onclick="document.getElementById('downloadModal').classList.remove('hidden')" 
+        class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+        Download Game  <i class="fa fa-windows" style="padding-left: 10px;"></i> (64 | 32 bit)
+        </button>
+        <button
+        class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+        (Coming Soon)  <i class="fa fa-android" style="padding-left: 10px;"></i>
+        </button>
+        <br><br>
+        <div class="rounded-xl overflow-hidden shadow-lg mb-8">
+        <img src="preview.png" alt="Game Project Preview" class="w-full">
+        </div>
+        <a href="../" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 dark:hover:bg-indigo-500 transition">← Back to Home</a>
+    </section>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 text-center py-6 border-t dark:border-gray-700 text-gray-600 dark:text-gray-400 transition-colors duration-300">
+        © 2025 Diaz Irfandi. All Right Reserved
+    </footer>
+
+    <script>
+        document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        });
+    </script>
+
+    <script>
+  const form = document.getElementById('downloadForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Ganti dengan URL Form kamu
+        const formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyVH0l11E2U87ESp29DlYqrdXScdbQJBOxC3Fmw-SWV-SFVw/formResponse";
+
+        fetch(formUrl, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+        }).then(() => {
+        // Tutup modal
+        document.getElementById('downloadModal').classList.add('hidden');
+
+        // Auto download file game (ganti linknya ke file kamu)
+        window.location.href = "https://drive.usercontent.google.com/download?id=1LwXvkc5OtS6FvUF90arND3_1h-SA5kAn";
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diaz Irfandi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Dark Mode
+        tailwind.config = {
+        darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav class="flex justify-between items-center p-6 pb-4 bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">DiazIrfandi</h1>
+        <ul class="flex gap-6">
+        <li><a href="#about" class="relative hover:text-indigo-600 dark:hover:text-indigo-400 after:block after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 hover:after:w-full">About</a></li>
+        <li><a href="#projects" class="relative hover:text-indigo-600 dark:hover:text-indigo-400 after:block after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 hover:after:w-full">Projects</a></li>
+        <li><a href="#contact" class="relative hover:text-indigo-600 dark:hover:text-indigo-400 after:block after:h-[2px] after:w-0 after:bg-indigo-600 dark:after:bg-indigo-400 after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
+        </ul>
+        <!-- Dark Mode Toggle -->
+        <button id="darkToggle" class="ml-6 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:scale-110 transition">
+        🌙
+        </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="flex flex-col items-center text-center py-20 px-6 bg-gradient-to-b from-indigo-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <img src="https://avatars.githubusercontent.com/u/175387592?v=4" alt="profile" class="w-32 h-32 rounded-full shadow-lg mb-6">
+        <h2 class="text-4xl font-extrabold mb-4">Hi, I'm <span class="text-indigo-600 dark:text-indigo-400">Diaz Irfandi</span> 👋</h2>
+        <p class="text-lg max-w-xl mb-6">A passionate <span class="font-semibold">Web Developer</span>, <span class="font-semibold">Game Developer</span>, and <span class="font-semibold">Network Engineer</span>. I love building modern apps, creating fun games, and designing scalable networks.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+        <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 text-sm font-medium px-3 py-1 rounded-full transform transition hover:scale-110">💻 Web Dev</span>
+        <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 text-sm font-medium px-3 py-1 rounded-full transform transition hover:scale-110">🎮 Game Dev</span>
+        <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 text-sm font-medium px-3 py-1 rounded-full transform transition hover:scale-110">🌐 Network Engineer</span>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="max-w-5xl mx-auto py-20 px-6">
+        <h3 class="text-3xl font-bold text-center mb-8">About Me</h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        I'm a technology enthusiast with a strong focus on web development, game creation, and networking systems.
+        With hands-on experience in building responsive websites, developing interactive games, and managing network infrastructures,
+        I aim to bring ideas into reality through code and creativity.
+        </p>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="bg-gray-100 dark:bg-gray-800 py-20 px-6 transition-colors duration-300">
+        <h3 class="text-3xl font-bold text-center mb-12">Projects</h3>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition p-6">
+            <h4 class="text-xl font-semibold mb-3">🌐 Web Portfolio</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">A sleek personal portfolio website built with HTML, TailwindCSS, and deployed on GitHub Pages.</p>
+            <a href="webproject/" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">View Project →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition p-6">
+            <h4 class="text-xl font-semibold mb-3">🎮 Game Prototype</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">A 3D indie game created in Unity with custom animations and immersive gameplay mechanics.</p>
+            <a href="gameproject/" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">View Project →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 rounded-2xl shadow hover:shadow-xl transition p-6">
+            <h4 class="text-xl font-semibold mb-3">🌐 Network Lab</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Designed a scalable virtual network lab for learning and testing various networking protocols.</p>
+            <a href="networklab/" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">View Project →</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="max-w-5xl mx-auto py-20 px-6 text-center">
+        <h3 class="text-3xl font-bold mb-8">Contact</h3>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Interested in working together or just want to say hi? Feel free to reach out!</p>
+        <a href="mailto:diazirfandi@hotmail.com"
+        class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 dark:hover:bg-indigo-500 transition">
+        Say Hello 👋
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-gray-800 text-center py-6 border-t dark:border-gray-700 text-gray-600 dark:text-gray-400 transition-colors duration-300">
+        © 2025 Diaz Irfandi. All Right Reserved
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('darkToggle');
+        toggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        });
+    </script>
+
+</body>
+</html>
