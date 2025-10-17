@@ -50,13 +50,13 @@
     <section class="max-w-4xl mx-auto py-20 px-6">
         <h1 class="text-4xl font-extrabold mb-6 text-indigo-600 dark:text-indigo-400">🎮 Game Project</h1>
         <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">I created a 3D indie game called <strong>Security Simulator</strong>, made using <strong><a href="https://unity.com/">Unity</a></strong> and several assets found on the internet. Although it is still in the <u>BETA</u> development stage, you can try it out and download it here now.</p>
-        <button onclick="document.getElementById('downloadModal').classList.remove('hidden')" 
+        <button onclick="downloadWindows()" 
         class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
-        Download Game  <i class="fa fa-windows" style="padding-left: 10px;"></i> (64 | 32 bit)
+        Download Windows  <i class="fa fa-windows" style="padding-left: 10px;"></i> (64 | 32 bit)
         </button>
         <button
         class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
-        (Coming Soon)  <i class="fa fa-android" style="padding-left: 10px;"></i>
+        Download Android  <i class="fa fa-android" style="padding-left: 10px;"></i> (APK)
         </button>
         <br><br>
         <div class="rounded-xl overflow-hidden shadow-lg mb-8">
@@ -79,25 +79,39 @@
     </script>
 
     <script>
-  const form = document.getElementById('downloadForm');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Ganti dengan URL Form kamu
-        const formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyVH0l11E2U87ESp29DlYqrdXScdbQJBOxC3Fmw-SWV-SFVw/formResponse";
-
-        fetch(formUrl, {
-        method: "POST",
-        body: new FormData(form),
-        mode: "no-cors"
-        }).then(() => {
-        // Tutup modal
-        document.getElementById('downloadModal').classList.add('hidden');
-
-        // Auto download file game (ganti linknya ke file kamu)
-        window.location.href = "https://drive.usercontent.google.com/download?id=1LwXvkc5OtS6FvUF90arND3_1h-SA5kAn";
+      const form = document.getElementById('downloadForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            // Ganti dengan URL Form kamu
+            const formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyVH0l11E2U87ESp29DlYqrdXScdbQJBOxC3Fmw-SWV-SFVw/formResponse";
+    
+            fetch(formUrl, {
+            method: "POST",
+            body: new FormData(form),
+            mode: "no-cors"
+            }).then(() => {
+            // Tutup modal
+            document.getElementById('downloadModal').classList.add('hidden');
+    
+            // Auto download file game (ganti linknya ke file kamu)
+                if (localStorage.getItem("download") == "Windows") {
+                    window.location.href = "https://drive.google.com/file/d/1dOQwaXmCysVfOvqjrWsO-Tw-AmIWeiL-/view?usp=sharing";
+                } else if (localStorage.getItem("download") == "Android") {
+                    window.location.href = "https://drive.google.com/file/d/1-hczfJr43zyMRBi7lRsERluzxQ9MiiQ8/view?usp=sharing";
+                }
+            });
         });
-    });
+
+        function downloadWindows() {
+            document.getElementById('downloadModal').classList.remove('hidden');
+            localStorage.setItem("download", "Windows");
+        }
+
+        function downloadAndroid() {
+            document.getElementById('downloadModal').classList.remove('hidden');
+            localStorage.setItem("download", "Android");
+        }
     </script>
 </body>
 </html>
