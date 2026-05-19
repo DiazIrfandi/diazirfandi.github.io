@@ -14,7 +14,7 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -22,15 +22,15 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-5xl mx-auto">
         <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-lg border border-white/40 dark:border-slate-700/40 shadow-lg rounded-full px-6 py-3 flex items-center justify-between">
-          
+
           <a href="#" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-            AHDI.
+            Irfandi.
           </a>
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
 
-          <button 
+          <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/80 transition-colors border border-white/50 dark:border-slate-600/50"
             aria-label="Toggle Theme"
