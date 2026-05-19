@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Lab | Diaz Irfandi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">DiazIrfandi</a>
+        <button id="darkToggle" class="ml-6 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:scale-110 transition">🌙</button>
+    </nav>
+
+    <!-- Content -->
+    <section class="max-w-4xl mx-auto py-20 px-6">
+        <h1 class="text-4xl font-extrabold mb-6 text-indigo-600 dark:text-indigo-400">🌐 Network Lab</h1>
+        <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">This project is a virtual network laboratory designed for learning and testing various networking protocols. It simulates scalable infrastructures and provides a sandbox environment for network engineering experiments.</p>
+        <div class="rounded-xl overflow-hidden shadow-lg mb-8">
+        <img src="preview.png" alt="Network Lab Preview" class="w-full">
+        </div>
+        <a href="../" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 dark:hover:bg-indigo-500 transition">← Back to Home</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 text-center py-6 border-t dark:border-gray-700 text-gray-600 dark:text-gray-400">
+        © 2025 Diaz Irfandi. Built with ❤️ and TailwindCSS.
+    </footer>
+
+    <script>
+        document.getElementById('darkToggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
